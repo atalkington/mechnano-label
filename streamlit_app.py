@@ -38,197 +38,197 @@ if submitted:
 # CUSTOM CSS
 # ---------------------------------------------------
 
-st.markdown(
-    """
-    <style>
-            .label-container{
-            position:relative;
-            width:1488px;
-            height:1024px;
-            background:#dcdcdc;
-            overflow:hidden;
-            margin:auto;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+    st.markdown(
+        """
+        <style>
+                .label-container{
+                position:relative;
+                width:1488px;
+                height:1024px;
+                background:#dcdcdc;
+                overflow:hidden;
+                margin:auto;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+        
+            .top-bar{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:210px;
+                background:linear-gradient(to right,#000,#1c1c1c);
+                z-index:1;
+            }
+        
+            .diag1{
+                position:absolute;
+                top:-180px;
+                right:-120px;
+                width:1200px;
+                height:700px;
+                background:#9f9f9f;
+                transform:rotate(-32deg);
+                z-index:2;
+            }
+        
+            .diag2{
+                position:absolute;
+                bottom:-260px;
+                left:-260px;
+                width:1200px;
+                height:500px;
+                background:#b8b8b8;
+                transform:rotate(-32deg);
+                opacity:0.65;
+                z-index:1;
+            }
+        
+            .logo{
+                position:absolute;
+                top:20px;
+                left:30px;
+                color:white;
+                z-index:10;
+            }
+        
+            .logo-top{
+                font-size:100px;
+                font-weight:700;
+                line-height:0.9;
+            }
+        
+            .logo-bottom{
+                font-size:100px;
+                font-weight:700;
+                line-height:0.9;
+                margin-left:40px;
+            }
+        
+            .content{
+                position:absolute;
+                top:220px;
+                left:45px;
+                z-index:5;
+                color:black;
+            }
+        
+            .content-row{
+                font-size:64px;
+                margin-bottom:25px;
+                line-height:1;
+            }
+        
+            .footer-left{
+                position:absolute;
+                left:30px;
+                bottom:40px;
+                font-size:34px;
+                line-height:1.25;
+                color:black;
+                z-index:5;
+            }
+        
+            .footer-note{
+                position:absolute;
+                bottom:60px;
+                left:700px;
+                font-size:22px;
+                font-weight:700;
+                color:white;
+                text-align:center;
+                z-index:5;
+            }
+        
+            .small-qr{
+                position:absolute;
+                bottom:110px;
+                left:880px;
+                width:105px;
+                height:105px;
+                z-index:5;
+            }
+        
+            .large-qr{
+                position:absolute;
+                bottom:65px;
+                right:60px;
+                width:260px;
+                height:260px;
+                background:white;
+                padding:12px;
+                border-radius:6px;
+                z-index:5;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    # ---------------------------------------------------
+    # LAYOUT
+    # ---------------------------------------------------
     
-        .top-bar{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:210px;
-            background:linear-gradient(to right,#000,#1c1c1c);
-            z-index:1;
-        }
+    st.markdown(
+        f"""
+        <div class="label-container">
     
-        .diag1{
-            position:absolute;
-            top:-180px;
-            right:-120px;
-            width:1200px;
-            height:700px;
-            background:#9f9f9f;
-            transform:rotate(-32deg);
-            z-index:2;
-        }
+            <div class="top-bar"></div>
+            <div class="diag1"></div>
+            <div class="diag2"></div>
     
-        .diag2{
-            position:absolute;
-            bottom:-260px;
-            left:-260px;
-            width:1200px;
-            height:500px;
-            background:#b8b8b8;
-            transform:rotate(-32deg);
-            opacity:0.65;
-            z-index:1;
-        }
+            <!-- LOGO -->
+            <div class="logo">
+                <div class="logo-top">Mech</div>
+                <div class="logo-bottom">Nano</div>
+            </div>
     
-        .logo{
-            position:absolute;
-            top:20px;
-            left:30px;
-            color:white;
-            z-index:10;
-        }
+            <!-- CONTENT -->
+            <div class="content">
     
-        .logo-top{
-            font-size:100px;
-            font-weight:700;
-            line-height:0.9;
-        }
+                <div class="content-row">
+                    <strong>NAME:</strong> {name}
+                </div>
     
-        .logo-bottom{
-            font-size:100px;
-            font-weight:700;
-            line-height:0.9;
-            margin-left:40px;
-        }
+                <div class="content-row">
+                    <strong>SKU:</strong> {sku}
+                </div>
     
-        .content{
-            position:absolute;
-            top:220px;
-            left:45px;
-            z-index:5;
-            color:black;
-        }
+                <div class="content-row">
+                    <strong>NET WEIGHT:</strong> {net_weight}
+                </div>
     
-        .content-row{
-            font-size:64px;
-            margin-bottom:25px;
-            line-height:1;
-        }
+                <div class="content-row">
+                    <strong>LOT #:</strong> {lot_number}
+                </div>
     
-        .footer-left{
-            position:absolute;
-            left:30px;
-            bottom:40px;
-            font-size:34px;
-            line-height:1.25;
-            color:black;
-            z-index:5;
-        }
+                <div class="content-row">
+                    <strong>MFG. DATE:</strong> {mfg_date}
+                </div>
     
-        .footer-note{
-            position:absolute;
-            bottom:60px;
-            left:700px;
-            font-size:22px;
-            font-weight:700;
-            color:white;
-            text-align:center;
-            z-index:5;
-        }
+                <div class="content-row">
+                    <strong>COO:</strong> {coo}
+                </div>
     
-        .small-qr{
-            position:absolute;
-            bottom:110px;
-            left:880px;
-            width:105px;
-            height:105px;
-            z-index:5;
-        }
+            </div>
     
-        .large-qr{
-            position:absolute;
-            bottom:65px;
-            right:60px;
-            width:260px;
-            height:260px;
-            background:white;
-            padding:12px;
-            border-radius:6px;
-            z-index:5;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-# ---------------------------------------------------
-# LAYOUT
-# ---------------------------------------------------
-
-st.markdown(
-    f"""
-    <div class="label-container">
-
-        <div class="top-bar"></div>
-        <div class="diag1"></div>
-        <div class="diag2"></div>
-
-        <!-- LOGO -->
-        <div class="logo">
-            <div class="logo-top">Mech</div>
-            <div class="logo-bottom">Nano</div>
+            <!-- FOOTER -->
+            <div class="footer-left">
+                Mechnano LLC.<br>
+                3850 E. Baseline Rd., Suite 126<br>
+                Mesa, AZ 85206<br>
+                (480) 717-7103<br>
+                www.mechnano.com
+            </div>
+    
+            <div class="footer-note">
+                This product may be covered by one or more patents.<br>
+                Scan QR code or visit www.electnano.com/ip
+            </div>
+    
         </div>
-
-        <!-- CONTENT -->
-        <div class="content">
-
-            <div class="content-row">
-                <strong>NAME:</strong> {name}
-            </div>
-
-            <div class="content-row">
-                <strong>SKU:</strong> {sku}
-            </div>
-
-            <div class="content-row">
-                <strong>NET WEIGHT:</strong> {net_weight}
-            </div>
-
-            <div class="content-row">
-                <strong>LOT #:</strong> {lot_number}
-            </div>
-
-            <div class="content-row">
-                <strong>MFG. DATE:</strong> {mfg_date}
-            </div>
-
-            <div class="content-row">
-                <strong>COO:</strong> {coo}
-            </div>
-
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer-left">
-            Mechnano LLC.<br>
-            3850 E. Baseline Rd., Suite 126<br>
-            Mesa, AZ 85206<br>
-            (480) 717-7103<br>
-            www.mechnano.com
-        </div>
-
-        <div class="footer-note">
-            This product may be covered by one or more patents.<br>
-            Scan QR code or visit www.electnano.com/ip
-        </div>
-
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        """,
+        unsafe_allow_html=True
+    )
 
 # ---------------------------------------------------
 # QR CODE OVERLAYS
