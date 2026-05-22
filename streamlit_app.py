@@ -75,6 +75,16 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             font-weight:700;
         }}
 
+        .white-background {{
+            position:absolute;
+            top:220px;
+            left:0px;
+            width:1200px;
+            height:700px;
+            background:#ffffff;
+            transform:rotate(-32deg);
+        }}
+
         .content {{
             position:absolute;
             top:220px;
@@ -111,6 +121,8 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">Mechnano</div>
+
+            <div class="white-background"></div>
 
             <div class="content">
                 <div class="content-row"><b>Name:</b> {name}</div>
