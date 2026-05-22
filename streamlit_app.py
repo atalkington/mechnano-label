@@ -5,9 +5,11 @@ st.title("🏷️ Label Generator")
 with st.form("label_form"):
 
     name = st.text_input("Name")
-    product = st.text_input("Product")
-    batch = st.text_input("Batch Number")
-    notes = st.text_area("Notes")
+    sku = st.text_input("SKU")
+    net_weight = st.text_input("Net Weight")
+    lot_number = st.text_input("Lot #")
+    mfg_date = st.text_input("Mfg. Date")
+    coo = st.text_input("COO")
 
     submitted = st.form_submit_button("Generate Label")
 
@@ -24,7 +26,7 @@ if submitted:
 
             .label {{
                 width: 400px;
-                border: 3px solid black;
+                border: 3px solid white;
                 padding: 20px;
                 border-radius: 12px;
             }}
@@ -50,10 +52,12 @@ if submitted:
         <div class="label">
             <h2>PRODUCT LABEL</h2>
 
-            <p><b>Name:</b> {name}</p>
-            <p><b>Product:</b> {product}</p>
-            <p><b>Batch:</b> {batch}</p>
-            <p><b>Notes:</b> {notes}</p>
+            <p><b>NAME:</b> {name}</p>
+            <p><b>SKU:</b> {sku}</p>
+            <p><b>NET WEIGHT:</b> {net_weight}</p>
+            <p><b>LOT #:</b> {lot_number}</p>
+            <p><b>MFG. DATE:</b> {mfg_date}</p>
+            <p><b>COO:</b> {coo}</p>
         </div>
 
         <button onclick="window.print()">
