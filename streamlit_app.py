@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-import qrcode
+#import qrcode
 
 st.title("🏷️ Label Generator")
 
@@ -29,11 +29,11 @@ if submitted:
 # QR CODE GENERATION
 # ---------------------------------------------------
 
-    large_qr_data = "https://www.electnano.com"
-    small_qr_data = "https://www.electnano.com/ip"
+   # large_qr_data = "https://www.electnano.com"
+   # small_qr_data = "https://www.electnano.com/ip"
     
-    large_qr = qrcode.make(large_qr_data)
-    small_qr = qrcode.make(small_qr_data)
+  #  large_qr = qrcode.make(large_qr_data)
+   # small_qr = qrcode.make(small_qr_data)
 # ---------------------------------------------------
 # CUSTOM CSS
 # ---------------------------------------------------
