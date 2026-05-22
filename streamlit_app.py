@@ -141,7 +141,7 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
     </div>
     """
 
-    st.components.v1.html(html, width=600, height=400, scrolling=False)
+    st.components.v1.html(html, width=900, height=600, scrolling=False)
 
 st.title("🏷️ Label Generator")
 
