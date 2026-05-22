@@ -5,18 +5,22 @@ design_height = 1024
 
 
 def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
+    scale = 0.35  # adjust this (0.25–0.5 usually works)
+
     return f"""
     <html>
     <head>
     <style>
-        @page {{
-            size: {design_width}px {design_height}px;
-            margin: 0;
-        }}
-
         body {{
             margin: 0;
             padding: 0;
+            overflow: hidden;
+        }}
+
+        .preview-wrapper {{
+            width: {design_width * scale}px;
+            height: {design_height * scale}px;
+            overflow: hidden;
         }}
 
         .label-container {{
@@ -26,6 +30,10 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             background:#dcdcdc;
             font-family:Arial, Helvetica, sans-serif;
             overflow:hidden;
+
+            /* SCALE ENTIRE LABEL */
+            transform: scale({scale});
+            transform-origin: top left;
         }}
 
         .top-bar {{
@@ -96,39 +104,40 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
     </head>
 
     <body>
-    <div class="label-container">
-        <div class="top-bar"></div>
-        <div class="diag1"></div>
-        <div class="diag2"></div>
+    <div class="preview-wrapper">
+        <div class="label-container">
+            <div class="top-bar"></div>
+            <div class="diag1"></div>
+            <div class="diag2"></div>
 
-        <div class="logo">Mechnano</div>
+            <div class="logo">Mechnano</div>
 
-        <div class="content">
-            <div class="content-row"><b>Name:</b> {name}</div>
-            <div class="content-row"><b>SKU:</b> {sku}</div>
-            <div class="content-row"><b>Net Weight:</b> {net_weight}</div>
-            <div class="content-row"><b>Lot #:</b> {lot_number}</div>
-            <div class="content-row"><b>Mfg Date:</b> {mfg_date}</div>
-            <div class="content-row"><b>COO:</b> {coo}</div>
-        </div>
+            <div class="content">
+                <div class="content-row"><b>Name:</b> {name}</div>
+                <div class="content-row"><b>SKU:</b> {sku}</div>
+                <div class="content-row"><b>Net Weight:</b> {net_weight}</div>
+                <div class="content-row"><b>Lot #:</b> {lot_number}</div>
+                <div class="content-row"><b>Mfg Date:</b> {mfg_date}</div>
+                <div class="content-row"><b>COO:</b> {coo}</div>
+            </div>
 
-        <div class="footer-left">
-            Mechnano LLC.<br>
-            3850 E. Baseline Rd., Suite 126<br>
-            Mesa, AZ 85206<br>
-            (480) 717-7103<br>
-            www.mechnano.com
-        </div>
+            <div class="footer-left">
+                Mechnano LLC.<br>
+                3850 E. Baseline Rd., Suite 126<br>
+                Mesa, AZ 85206<br>
+                (480) 717-7103<br>
+                www.mechnano.com
+            </div>
 
-        <div class="footer-note">
-            This product may be covered by one or more patents.<br>
-            Scan QR code or visit www.electnano.com/ip
+            <div class="footer-note">
+                This product may be covered by one or more patents.<br>
+                Scan QR code or visit www.electnano.com/ip
+            </div>
         </div>
     </div>
     </body>
     </html>
     """
-
 
 st.title("🏷️ Label Generator")
 
@@ -144,7 +153,11 @@ with st.form("label_form"):
 if submitted:
     html = build_html(name, sku, net_weight, lot_number, mfg_date, coo)
 
-    st.components.v1.html(html, height=400, scrolling=True)
+    st.components.v1.html(
+        html,
+        height=int(design_height * 0.35) + 20,
+        scrolling=False
+    )
 
     st.download_button(
         "⬇️ Download Label (HTML)",
