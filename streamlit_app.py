@@ -50,7 +50,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             top:-180px;
             right:-120px;
             width:1200px;
-            height:700px;
+            height:850px;
             background:#9f9f9f;
             transform:rotate(-32deg);
         }}
@@ -80,7 +80,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             top:200px;
             left:0px;
             width:100%;
-            height:500px;
+            height:650px;
             background:#ffffff;
         }}
 
