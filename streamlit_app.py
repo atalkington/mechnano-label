@@ -235,10 +235,10 @@ st.markdown(
 # ---------------------------------------------------
 
 # Create columns to help place QR codes
-col1, col2, col3 = st.columns([6, 2, 2])
+#col1, col2, col3 = st.columns([6, 2, 2])
 
-with col2:
-    st.image(small_qr, width=105)
+#with col2:
+    #st.image(small_qr, width=105)
 
-with col3:
-    st.image(large_qr, width=260)
+#with col3:
+   # st.image(large_qr, width=260)
