@@ -80,7 +80,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             top:200px;
             left:0px;
             width:100%;
-            height:650px;
+            height:600px;
             background:#ffffff;
         }}
 
