@@ -68,8 +68,8 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
 
         .logo {{
             position:absolute;
-            top:30px;
-            left:30px;
+            top:60px;
+            left:60px;
             color:white;
             font-size:100px;
             font-weight:700;
