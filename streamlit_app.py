@@ -1,7 +1,7 @@
 import streamlit as st
 
-design_width = 900
-design_height = 600
+design_width = 1488
+design_height = 1024
 
 
 def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
