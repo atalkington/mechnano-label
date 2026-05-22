@@ -20,20 +20,20 @@ if submitted:
 # PAGE CONFIG
 # ---------------------------------------------------
 
-st.set_page_config(
-    page_title="Elect Nano Label",
-    layout="wide"
-)
+    st.set_page_config(
+        page_title="Elect Nano Label",
+        layout="wide"
+    )
     
 # ---------------------------------------------------
 # QR CODE GENERATION
 # ---------------------------------------------------
 
-large_qr_data = "https://www.electnano.com"
-small_qr_data = "https://www.electnano.com/ip"
-
-large_qr = qrcode.make(large_qr_data)
-small_qr = qrcode.make(small_qr_data)
+    large_qr_data = "https://www.electnano.com"
+    small_qr_data = "https://www.electnano.com/ip"
+    
+    large_qr = qrcode.make(large_qr_data)
+    small_qr = qrcode.make(small_qr_data)
 # ---------------------------------------------------
 # CUSTOM CSS
 # ---------------------------------------------------
