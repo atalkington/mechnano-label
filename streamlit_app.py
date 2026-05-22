@@ -19,7 +19,6 @@ if submitted:
 # ---------------------------------------------------
 # PAGE CONFIG
 # ---------------------------------------------------
-
     st.set_page_config(
         page_title="Elect Nano Label",
         layout="wide"
@@ -37,11 +36,10 @@ if submitted:
 # ---------------------------------------------------
 # CUSTOM CSS
 # ---------------------------------------------------
-
     st.markdown(
         """
         <style>
-                .label-container{
+            .label-container{
                 position:relative;
                 width:1488px;
                 height:1024px;
