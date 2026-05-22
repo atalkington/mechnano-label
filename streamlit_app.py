@@ -98,7 +98,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         .footer-left {{
             position:absolute;
             left:30px;
-            bottom:40px;
+            bottom:20px;
             font-size:34px;
         }}
 
