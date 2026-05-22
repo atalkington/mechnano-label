@@ -49,7 +49,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             position:absolute;
             top:-180px;
             right:-120px;
-            width:1200px;
+            width:2400px;
             height:850px;
             background:#9f9f9f;
             transform:rotate(-32deg);
@@ -59,7 +59,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             position:absolute;
             bottom:-260px;
             left:-260px;
-            width:1200px;
+            width:2400px;
             height:500px;
             background:#b8b8b8;
             transform:rotate(-32deg);
