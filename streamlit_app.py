@@ -42,7 +42,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             left:0;
             width:100%;
             height:210px;
-            background:linear-gradient(to right,#000,#ff0000);
+            background:linear-gradient(to right,#000,#1c1c1c);
         }}
 
         .diag1 {{
@@ -51,7 +51,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             right:-120px;
             width:1200px;
             height:850px;
-            background:#9f9f9f;
+            background:#ff0000;
             transform:rotate(-32deg);
         }}
 
