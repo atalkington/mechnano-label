@@ -2,8 +2,8 @@ import streamlit as st
 
 def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
 
-    design_width = 600
-    design_height = 400
+    design_width = 1488
+    design_height = 1024
 
     container_width = 100  # <-- change this to whatever fits Streamlit
     scale = container_width / design_width
