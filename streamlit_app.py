@@ -3,7 +3,6 @@ import streamlit as st
 design_width = 1488
 design_height = 1024
 
-
 def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
     scale = 0.35  # adjust this (0.25–0.5 usually works)
 
@@ -118,7 +117,9 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag1"></div>
             <div class="diag2"></div>
 
-            <div class="logo">Mechnano</div>
+            <div class="logo">
+                <img src="Mechnano_White_TM.jpg" alt="Mechnano Logo">
+            </div>
 
             <div class="white-background"></div>
 
