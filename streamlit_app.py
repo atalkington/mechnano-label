@@ -20,12 +20,12 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         }}
 
         .label-container {{
-            width:{design_width}px;
-            height:{design_height}px;
-            position:relative;
-            background:#dcdcdc;
-            font-family:Arial, Helvetica, sans-serif;
-            overflow:hidden;
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 1488 / 1024;
+            position: relative;
+            background: #dcdcdc;
+            font-family: Arial;
         }}
 
         .top-bar {{
