@@ -77,10 +77,10 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
 
         .white-background {{
             position:absolute;
-            top:220px;
+            top:200px;
             left:0px;
-            width:1200px;
-            height:700px;
+            width:100%;
+            height:500px;
             background:#ffffff;
         }}
 
