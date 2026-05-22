@@ -21,23 +21,23 @@ with st.form("label_form"):
     submitted = st.form_submit_button("Generate Label")
 
 if submitted:
-# ---------------------------------------------------
-# PAGE CONFIG
-# ---------------------------------------------------
-    
-# ---------------------------------------------------
-# QR CODE GENERATION
-# ---------------------------------------------------
-
-   # large_qr_data = "https://www.electnano.com"
-   # small_qr_data = "https://www.electnano.com/ip"
-    
-  #  large_qr = qrcode.make(large_qr_data)
-   # small_qr = qrcode.make(small_qr_data)
-# ---------------------------------------------------
-# CUSTOM CSS
-# ---------------------------------------------------
-    st.markdown(
+        # ---------------------------------------------------
+        # PAGE CONFIG
+        # ---------------------------------------------------
+            
+        # ---------------------------------------------------
+        # QR CODE GENERATION
+        # ---------------------------------------------------
+        
+           # large_qr_data = "https://www.electnano.com"
+           # small_qr_data = "https://www.electnano.com/ip"
+            
+          #  large_qr = qrcode.make(large_qr_data)
+           # small_qr = qrcode.make(small_qr_data)
+        # ---------------------------------------------------
+        # CUSTOM CSS
+        # ---------------------------------------------------
+        st.markdown(
         """
         <style>
             .label-container{
@@ -160,56 +160,54 @@ if submitted:
                 z-index:5;
             }
         </style>
-        """,
-        unsafe_allow_html=True
-    )
+        """, unsafe_allow_html=True)
     # ---------------------------------------------------
     # LAYOUT
     # ---------------------------------------------------
     
-    st.markdown(
+        st.markdown(
         f"""
         <div class="label-container">
-    
+        
             <div class="top-bar"></div>
             <div class="diag1"></div>
             <div class="diag2"></div>
-    
+        
             <!-- LOGO -->
             <div class="logo">
                 <div class="logo-top">Mech</div>
                 <div class="logo-bottom">Nano</div>
             </div>
-    
+        
             <!-- CONTENT -->
             <div class="content">
-    
+        
                 <div class="content-row">
                     <strong>NAME:</strong> {name}
                 </div>
-    
+        
                 <div class="content-row">
                     <strong>SKU:</strong> {sku}
                 </div>
-    
+        
                 <div class="content-row">
                     <strong>NET WEIGHT:</strong> {net_weight}
                 </div>
-    
+        
                 <div class="content-row">
                     <strong>LOT #:</strong> {lot_number}
                 </div>
-    
+        
                 <div class="content-row">
                     <strong>MFG. DATE:</strong> {mfg_date}
                 </div>
-    
+        
                 <div class="content-row">
                     <strong>COO:</strong> {coo}
                 </div>
-    
+        
             </div>
-    
+        
             <!-- FOOTER -->
             <div class="footer-left">
                 Mechnano LLC.<br>
@@ -218,16 +216,14 @@ if submitted:
                 (480) 717-7103<br>
                 www.mechnano.com
             </div>
-    
+        
             <div class="footer-note">
                 This product may be covered by one or more patents.<br>
                 Scan QR code or visit www.electnano.com/ip
             </div>
-    
+        
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """, unsafe_allow_html=True)
 
 # ---------------------------------------------------
 # QR CODE OVERLAYS
