@@ -1,29 +1,26 @@
 import streamlit as st
+from html2image import Html2Image
+import base64
+from io import BytesIO
 
-def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
+design_width = 1488
+design_height = 1024
 
-    design_width = 1488
-    design_height = 1024
 
-    container_width = 100  # <-- change this to whatever fits Streamlit
-    scale = container_width / design_width
-
-    html = f"""
+def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
+    return f"""
     <style>
-        .scale-wrapper {{
-            width: {design_width}px;
-            height: {design_height}px;
-            transform: scale({scale});
-            transform-origin: top left;
+        body {{
+            margin: 0;
         }}
+
         .label-container {{
-            position:relative;
             width:{design_width}px;
             height:{design_height}px;
+            position:relative;
             background:#dcdcdc;
-            overflow:hidden;
-            margin:auto;
             font-family:Arial, Helvetica, sans-serif;
+            overflow:hidden;
         }}
 
         .top-bar {{
@@ -61,29 +58,19 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
             top:20px;
             left:30px;
             color:white;
-        }}
-
-        .logo-top, .logo-bottom {{
             font-size:100px;
             font-weight:700;
-            line-height:0.9;
-        }}
-
-        .logo-bottom {{
-            margin-left:40px;
         }}
 
         .content {{
             position:absolute;
             top:220px;
             left:45px;
-            color:black;
+            font-size:64px;
         }}
 
         .content-row {{
-            font-size:64px;
             margin-bottom:25px;
-            line-height:1;
         }}
 
         .footer-left {{
@@ -91,8 +78,6 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
             left:30px;
             bottom:40px;
             font-size:34px;
-            line-height:1.25;
-            color:black;
         }}
 
         .footer-note {{
@@ -101,20 +86,15 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
             left:700px;
             font-size:22px;
             font-weight:700;
-            color:white;
-            text-align:center;
         }}
     </style>
 
     <div class="label-container">
-
         <div class="top-bar"></div>
         <div class="diag1"></div>
         <div class="diag2"></div>
 
-        <div class="logo">
-            <div class="logo-top">Mechnano</div>
-        </div>
+        <div class="logo">Mechnano</div>
 
         <div class="content">
             <div class="content-row"><b>NAME:</b> {name}</div>
@@ -137,31 +117,47 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
             This product may be covered by one or more patents.<br>
             Scan QR code or visit www.electnano.com/ip
         </div>
-
     </div>
     """
 
-    st.components.v1.html(html, width=900, height=600, scrolling=False)
+
+def html_to_png(html: str):
+    hti = Html2Image()
+    file_name = "label"
+
+    hti.output_path = "."
+
+    hti.screenshot(
+        html_str=html,
+        save_as=file_name,
+        size=(design_width, design_height)
+    )
+
+    with open(f"{file_name}.png", "rb") as f:
+        return f.read()
+
 
 st.title("🏷️ Label Generator")
 
 with st.form("label_form"):
-
     name = st.text_input("Name")
     sku = st.text_input("SKU")
     net_weight = st.text_input("Net Weight")
     lot_number = st.text_input("Lot #")
     mfg_date = st.text_input("Mfg. Date")
     coo = st.text_input("COO")
-
     submitted = st.form_submit_button("Generate Label")
 
 if submitted:
-        render_label(
-                name,
-                sku,
-                net_weight,
-                lot_number, 
-                mfg_date,
-                coo
-        )
+    html = build_html(name, sku, net_weight, lot_number, mfg_date, coo)
+
+    st.components.v1.html(html, height=1100, scrolling=True)
+
+    img_bytes = html_to_png(html)
+
+    st.download_button(
+        "⬇️ Download Label (PNG)",
+        data=img_bytes,
+        file_name="label.png",
+        mime="image/png"
+    )
