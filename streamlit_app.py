@@ -144,7 +144,7 @@ with st.form("label_form"):
 if submitted:
     html = build_html(name, sku, net_weight, lot_number, mfg_date, coo)
 
-    st.components.v1.html(html, height=1100, scrolling=True)
+    st.components.v1.html(html, height=400, scrolling=True)
 
     st.download_button(
         "⬇️ Download Label (HTML)",
