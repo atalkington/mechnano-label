@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-import qrcode
+pip install streamlit qrcode pillow 
 
 st.title("🏷️ Label Generator")
 
