@@ -2,6 +2,11 @@ import streamlit as st
 from PIL import Image
 #import qrcode
 
+st.set_page_config(
+        page_title="Elect Nano Label",
+        layout="wide"
+)
+
 st.title("🏷️ Label Generator")
 
 with st.form("label_form"):
@@ -19,10 +24,6 @@ if submitted:
 # ---------------------------------------------------
 # PAGE CONFIG
 # ---------------------------------------------------
-    st.set_page_config(
-        page_title="Elect Nano Label",
-        layout="wide"
-    )
     
 # ---------------------------------------------------
 # QR CODE GENERATION
