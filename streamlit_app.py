@@ -1,7 +1,4 @@
 import streamlit as st
-from html2image import Html2Image
-import base64
-from io import BytesIO
 
 design_width = 1488
 design_height = 1024
@@ -9,9 +6,17 @@ design_height = 1024
 
 def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
     return f"""
+    <html>
+    <head>
     <style>
+        @page {{
+            size: {design_width}px {design_height}px;
+            margin: 0;
+        }}
+
         body {{
             margin: 0;
+            padding: 0;
         }}
 
         .label-container {{
@@ -88,7 +93,9 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             font-weight:700;
         }}
     </style>
+    </head>
 
+    <body>
     <div class="label-container">
         <div class="top-bar"></div>
         <div class="diag1"></div>
@@ -97,11 +104,11 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         <div class="logo">Mechnano</div>
 
         <div class="content">
-            <div class="content-row"><b>NAME:</b> {name}</div>
+            <div class="content-row"><b>Name:</b> {name}</div>
             <div class="content-row"><b>SKU:</b> {sku}</div>
-            <div class="content-row"><b>NET WEIGHT:</b> {net_weight}</div>
-            <div class="content-row"><b>LOT #:</b> {lot_number}</div>
-            <div class="content-row"><b>MFG. DATE:</b> {mfg_date}</div>
+            <div class="content-row"><b>Net Weight:</b> {net_weight}</div>
+            <div class="content-row"><b>Lot #:</b> {lot_number}</div>
+            <div class="content-row"><b>Mfg Date:</b> {mfg_date}</div>
             <div class="content-row"><b>COO:</b> {coo}</div>
         </div>
 
@@ -118,23 +125,9 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             Scan QR code or visit www.electnano.com/ip
         </div>
     </div>
+    </body>
+    </html>
     """
-
-
-def html_to_png(html: str):
-    hti = Html2Image()
-    file_name = "label"
-
-    hti.output_path = "."
-
-    hti.screenshot(
-        html_str=html,
-        save_as=file_name,
-        size=(design_width, design_height)
-    )
-
-    with open(f"{file_name}.png", "rb") as f:
-        return f.read()
 
 
 st.title("🏷️ Label Generator")
@@ -153,11 +146,9 @@ if submitted:
 
     st.components.v1.html(html, height=1100, scrolling=True)
 
-    img_bytes = html_to_png(html)
-
     st.download_button(
-        "⬇️ Download Label (PNG)",
-        data=img_bytes,
-        file_name="label.png",
-        mime="image/png"
+        "⬇️ Download Label (HTML)",
+        data=html,
+        file_name="label.html",
+        mime="text/html"
     )
