@@ -2,8 +2,8 @@ import streamlit as st
 
 def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
 
-    design_width = 1488
-    design_height = 1024
+    design_width = 145
+    design_height = 100
 
     container_width = 200  # <-- change this to whatever fits Streamlit
     scale = container_width / design_width
@@ -113,8 +113,7 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
         <div class="diag2"></div>
 
         <div class="logo">
-            <div class="logo-top">Mech</div>
-            <div class="logo-bottom">Nano</div>
+            <div class="logo-top">Mechnano</div>
         </div>
 
         <div class="content">
