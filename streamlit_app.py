@@ -5,7 +5,7 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
     design_width = 1488
     design_height = 1024
 
-    container_width = 800  # <-- change this to whatever fits Streamlit
+    container_width = 400  # <-- change this to whatever fits Streamlit
     scale = container_width / design_width
 
     html = f"""
