@@ -51,7 +51,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             left:-300px;
             width:3500px;
             height:900px;
-            background:#ff0000;
+            background:#9f9f9f;
             transform:rotate(-32deg);
         }}
 
