@@ -58,7 +58,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         .diag2 {{
             position:absolute;
             top:-300px;
-            left:0px;
+            left:-50px;
             width:3500px;
             height:600px;
             background:#b8b8b8;
