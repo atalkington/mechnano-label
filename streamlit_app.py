@@ -57,10 +57,10 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
 
         .diag2 {{
             position:absolute;
-            bottom:-260px;
-            left:-260px;
-            width:1200px;
-            height:500px;
+            bottom:-300px;
+            left:-300px;
+            width:3500px;
+            height:600px;
             background:#b8b8b8;
             transform:rotate(-32deg);
             opacity:0.65;
