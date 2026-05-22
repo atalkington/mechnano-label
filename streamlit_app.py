@@ -6,8 +6,8 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
     <style>
         .label-container {{
             position:relative;
-            width:1488px;
-            height:1024px;
+            width:4in;
+            height:3in;
             background:#dcdcdc;
             overflow:hidden;
             margin:auto;
