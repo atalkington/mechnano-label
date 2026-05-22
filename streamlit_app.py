@@ -2,8 +2,8 @@ import streamlit as st
 
 def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
 
-    design_width = 145
-    design_height = 100
+    design_width = 1488
+    design_height = 1024
 
     container_width = 200  # <-- change this to whatever fits Streamlit
     scale = container_width / design_width
@@ -141,7 +141,7 @@ def render_label(name, sku, net_weight, lot_number, mfg_date, coo):
     </div>
     """
 
-    st.components.v1.html(html, width=900, height=700, scrolling=True)
+    st.components.v1.html(html, width=600, height=400, scrolling=True)
 
 st.title("🏷️ Label Generator")
 
