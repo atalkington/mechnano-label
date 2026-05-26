@@ -36,12 +36,12 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         }}
 
         .top-bar {{
-            background-image: url('Mechnano_White_TM.png');
-            background-position: center;
             position:absolute;
             top:0;
             left:0;
             height:210px;
+            width:100%;
+            background:#36454f
         }}
 
         .diag1 {{
