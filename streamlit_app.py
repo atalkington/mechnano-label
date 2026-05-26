@@ -41,7 +41,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             left:0;
             height:210px;
             width:100%;
-            background:#36454f
+            background:#000000
         }}
 
         .diag1 {{
@@ -62,15 +62,6 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             height:600px;
             background:#b8b8b8;
             transform:rotate(-32deg);
-        }}
-
-        .logo {{
-            position:absolute;
-            top:45px;
-            left:60px;
-            color:white;
-            font-size:100px;
-            font-weight:700;
         }}
 
         .white-background {{
@@ -118,6 +109,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">
+                <img src="Mechnano_White_TM.png height=210px>
             </div>
 
             <div class="white-background"></div>
