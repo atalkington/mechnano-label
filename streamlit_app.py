@@ -81,8 +81,8 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
 
         .logo {{
             position:absolute;
-            top:10px;
-            left:20px;
+            top:0px;
+            left:0px;
             z-index:10;
         }}
 
