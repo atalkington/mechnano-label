@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+from weasyprint import HTML
 
 def get_base64_image(path):
     with open(path, "rb") as img:
@@ -174,9 +175,11 @@ if submitted:
         scrolling=False
     )
 
+    pdf = HTML(string=html).write_pdf()
+
     st.download_button(
-        "⬇️ Download Label (HTML)",
-        data=html,
-        file_name="label.html",
-        mime="text/html"
+        "⬇️ Download Label (PDF)",
+        data=pdf,
+        file_name="label.pdf",
+        mime="application/pdf"
     )
