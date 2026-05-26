@@ -81,11 +81,9 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
 
         .logo {{
             position:absolute;
-            top:0px;
-            left:0px;
-            color:white;
-            font-size:100px;
-            font-weight:700;
+            top:10px;
+            left:20px;
+            z-index:10;
         }}
 
         .content {{
@@ -124,7 +122,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">
-                <img src="data:image/png;base64,{logo_b64}" height="300" alt="Mechnano">
+                <img src="data:image/png;base64,{logo_b64}" height="210" alt="Mechnano">
             </div>
 
             <div class="white-background"></div>
