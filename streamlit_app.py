@@ -1,11 +1,17 @@
 import streamlit as st
+import base64
+
+def get_base64_image(path):
+    with open(path, "rb") as img:
+        return base64.b64encode(img.read()).decode()
 
 design_width = 1488
 design_height = 1024
 
 def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
     scale = 0.35  # adjust this (0.25–0.5 usually works)
-
+    logo_b64 = get_base64_image("Mechnano_White_TM.png")
+    
     return f"""
     <html>
     <head>
@@ -118,7 +124,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">
-                <img src="./Mechnano_White_TM.png" height="210px" alt="Mechnano">
+                <img src="data:image/png;base64,{logo_b64}" height="210" alt="Mechnano">
             </div>
 
             <div class="white-background"></div>
