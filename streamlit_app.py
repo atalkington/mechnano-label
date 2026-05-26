@@ -36,6 +36,8 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
         }}
 
         .top-bar {{
+            background-image: url('Mechnano_White_TM.png');
+            background-position: center;
             position:absolute;
             top:0;
             left:0;
@@ -118,7 +120,6 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">
-                <img src="Mechnano_White_TM.png" width="300" height="50" alt="Mechnano Logo">
             </div>
 
             <div class="white-background"></div>
