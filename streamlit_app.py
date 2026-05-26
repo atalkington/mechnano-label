@@ -73,6 +73,15 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             background:#ffffff;
         }}
 
+        .logo {{
+            position:absolute;
+            top:45px;
+            left:60px;
+            color:white;
+            font-size:100px;
+            font-weight:700;
+        }}
+
         .content {{
             position:absolute;
             top:220px;
