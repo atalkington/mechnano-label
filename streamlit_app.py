@@ -118,7 +118,7 @@ def build_html(name, sku, net_weight, lot_number, mfg_date, coo):
             <div class="diag2"></div>
 
             <div class="logo">
-                <img src="Mechnano_White_TM.png" height="210px" alt="Mechnano">
+                <img src="./Mechnano_White_TM.png" height="210px" alt="Mechnano">
             </div>
 
             <div class="white-background"></div>
